@@ -1,0 +1,26 @@
+{
+    "games": [
+        {
+            "game": {
+                "players": {
+                    "red": "username",
+                    "blue": "username2"
+                },
+                "board": [
+                    {
+                        "value": 10,
+                        "position": {"x": 0, "y": 0},
+                        "player": "username"
+                    }
+                ],
+                "graveyard": [
+                    {
+                        "value": 10,
+                        "position": {"x": 0, "y": 0},
+                        "player": "username"
+                    }
+                ]
+            }
+        }
+    ]
+}

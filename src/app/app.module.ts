@@ -1,16 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BoardComponent } from './board/board.component';
+import { GraveyardComponent } from './graveyard/graveyard.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { GameComponent } from './game/game.component';
+import { firebaseConfig } from 'src/firebaseApi';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { LobbyComponent } from './lobby/lobby.component';
+
+export const firebase = {
+  apiKey: firebaseConfig.apiKey,
+  authDomain: firebaseConfig.authDomain,
+  databaseURL: firebaseConfig.databaseURL,
+  storageBucket: firebaseConfig.storageBucket
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BoardComponent,
+    GraveyardComponent,
+    InventoryComponent,
+    GameComponent,
+    LobbyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
