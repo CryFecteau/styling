@@ -3,8 +3,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'stratego';
+  title: string = 'Stratego';
+  localPlayer: string;
+
+  setLocalPlayer(username: string) {
+    this.localPlayer = username;
+  }
+
 }

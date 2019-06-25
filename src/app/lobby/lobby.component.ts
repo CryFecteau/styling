@@ -8,10 +8,12 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-lobby',
   templateUrl: './lobby.component.html',
-  styleUrls: ['./lobby.component.sass'],
+  styleUrls: ['./lobby.component.scss'],
   providers: [GameService]
 })
 export class LobbyComponent implements OnInit {
+
+  @Output() setLocalUser = new EventEmitter();
 
   constructor(
     private gameService: GameService,
@@ -23,7 +25,7 @@ export class LobbyComponent implements OnInit {
 
   createGame(username: string) {
     if(!username) return;
-
+    this.setLocalUser.emit(username);
     // TODO? Randomize red or blue team?
     let newGame = new Game([new Player(username, 'r'), null]);
     let key = this.gameService.createGame(newGame);
@@ -33,8 +35,12 @@ export class LobbyComponent implements OnInit {
   
   joinGame(username: string, gameKey: string) {
     if(!username || !gameKey) return;
-
+    this.setLocalUser.emit(username);
     this.gameService.getGame(gameKey);
+
+    //ADD PLAYER 2 TO GAME HERE
+    
+    this.router.navigate(['games', gameKey]);
   }
 
 }

@@ -4,7 +4,7 @@ import { Piece } from '../models/piece';
 @Component({
   selector: 'app-graveyard',
   templateUrl: './graveyard.component.html',
-  styleUrls: ['./graveyard.component.sass']
+  styleUrls: ['./graveyard.component.scss']
 })
 export class GraveyardComponent implements OnInit {
 
