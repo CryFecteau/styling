@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Piece } from '../models/piece';
+// import { Piece } from '../models/piece';
 
 @Component({
   selector: 'app-graveyard',
@@ -8,7 +8,7 @@ import { Piece } from '../models/piece';
 })
 export class GraveyardComponent implements OnInit {
 
-  constructor(public red: Piece[] = [], public blue: Piece[] = []) { }
+  // constructor(public red: Piece[] = [], public blue: Piece[] = []) { }
 
   ngOnInit() {
   }
